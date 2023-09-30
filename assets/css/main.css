@@ -2,4 +2,31 @@ h1 {
   color: red;
 }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 87.499em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (max-width: 74.999em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 61.999em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
