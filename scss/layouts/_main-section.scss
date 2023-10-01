@@ -7,17 +7,21 @@ main {
   transform: translate(50%, -50%);
   @include m-auto;
   height: 70%;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: 17rem;
 
   .main__content {
     .main__contents--top {
       border-bottom: 1px solid $light-grey;
       width: 90%;
-      padding: 2rem 0;
-      margin: auto;
+      padding: 2.5rem 0 2.5rem 2.5rem;
+    //   margin: auto;
       @include flex-comp;
 
       .main__content--dates {
-        // border: 1px solid blue;
+        position: relative;
         @include flex-half;
 
         label {
@@ -30,6 +34,7 @@ main {
           border: 1px solid $light-grey;
           padding: 1.5rem 1rem;
           border-radius: .5rem;
+          width: 67%;
 
           &::placeholder{
             font-size: 1.3rem;
