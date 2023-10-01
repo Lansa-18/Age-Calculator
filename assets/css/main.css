@@ -32,6 +32,19 @@ html {
 
 main {
   background-color: hsl(0, 0%, 100%);
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 50%;
+  margin: auto;
+  height: 70%;
+}
+main .main__content .main__contents--top {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

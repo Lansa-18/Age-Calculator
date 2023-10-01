@@ -2,6 +2,21 @@
 
 main{
     background-color: $white;
-    // width: 200px;
-    // height: 200px;
+    border: 1px solid red;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    @include m-auto;
+    height: 70%;
+
+    .main__content{
+        .main__contents--top{
+            border: 1px solid blue;
+            @include flex-comp;
+
+            .main__content--dates{
+                
+            }
+        }
+    }
 }
