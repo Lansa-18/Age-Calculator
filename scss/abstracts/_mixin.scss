@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 // MEDIA QUERY BREAKPOINTS!
 $breakpoints: (
@@ -24,13 +24,18 @@ $breakpoints: (
   }
 }
 
-@mixin m-auto{
-    width: 50%;
-    margin: auto;
+@mixin m-auto {
+  width: 50%;
+  margin: auto;
 }
 
-@mixin flex-comp{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@mixin flex-comp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-half {
+  display: flex;
+  flex-direction: column;
 }
