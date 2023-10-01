@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | Age calculator app</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="icon" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="icon" href="./images/favicon-32x32.png" />
     <script defer src="./script.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div class="main__content"> 
-            <div class="main__contents--top">
-            
-                <div class="main__contents--top--img">
-
-                </div>
+      <div class="main__content">
+        <div class="main__contents--top">
+            <div class="main__content--dates main__content--dates-day">
+                <label for="day">Day</label>
+                <input type="text" id="day">
             </div>
-            <div class="main__contents--bottom">
-
+            <div class="main__content--dates main__content--dates-month">
+                <label for="month">Month</label>
+                <input type="text" id="month">
             </div>
+            <div class="main__content--dates main__content--dates-year">
+                <label for="year">Year</label>
+                <input type="text" id="year">
+            </div>
+          <!-- <div class="main__contents--top--img"></div> -->
         </div>
+        <div class="main__contents--bottom"></div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
