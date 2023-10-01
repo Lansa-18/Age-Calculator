@@ -38,5 +38,5 @@ $breakpoints: (
 @mixin flex-half {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .9rem;
 }

@@ -21,13 +21,15 @@ main {
         @include flex-half;
 
         label {
-          font-size: 2rem;
+          font-size: 1.2rem;
+          font-weight: 650;
           color: $off-black;
         }
         input {
           outline: 0;
           border: 1px solid $light-grey;
           padding: 1.5rem 1rem;
+          border-radius: .5rem;
 
           &::placeholder{
             font-size: 1.3rem;
