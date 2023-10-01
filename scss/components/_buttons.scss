@@ -1,0 +1,8 @@
+@use '../abstracts/' as *;
+
+.main__contents--top--btn{
+    background-color: $purple;
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+}

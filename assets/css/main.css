@@ -29,6 +29,13 @@ html {
   }
 }
 
+.main__contents--top--btn {
+  background-color: hsl(259, 100%, 65%);
+  border: none;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
 main {
   background-color: hsl(0, 0%, 100%);
   position: absolute;
