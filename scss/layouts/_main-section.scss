@@ -6,7 +6,6 @@ main {
   top: 50%;
   transform: translate(50%, -50%);
   @include m-auto;
-  height: 70%;
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
@@ -35,7 +34,7 @@ main {
           border: 1px solid $light-grey;
           padding: 1.5rem 1rem;
           border-radius: .5rem;
-          width: 67%;
+          width: 80%;
 
           &::placeholder{
             font-size: 1.3rem;
@@ -43,6 +42,20 @@ main {
           }
         }
       }
+    }
+    .main__contents--bottom{
+        // border: 1px solid blue;
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 3.6rem;
+        font-weight: 900;
+        font-style: italic;
+        letter-spacing: 1px;
+
+        span{
+            color: $purple;
+        }
     }
   }
 }
