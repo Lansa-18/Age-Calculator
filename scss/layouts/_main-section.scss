@@ -11,11 +11,12 @@ main{
 
     .main__content{
         .main__contents--top{
-            border: 1px solid blue;
+            // border: 1px solid blue;
             @include flex-comp;
 
             .main__content--dates{
-                
+                border: 1px solid blue;
+                @include flex-half
             }
         }
     }
