@@ -1,32 +1,40 @@
 @use '../abstracts/' as *;
 
-main{
-    background-color: $white;
-    border: 1px solid red;
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
-    @include m-auto;
-    height: 70%;
+main {
+  background-color: $white;
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  @include m-auto;
+  height: 70%;
 
-    .main__content{
-        .main__contents--top{
-            // border: 1px solid blue;
-            @include flex-comp;
+  .main__content {
+    .main__contents--top {
+      border-bottom: 1px solid $light-grey;
+      width: 90%;
+      padding: 2rem 0;
+      margin: auto;
+      @include flex-comp;
 
-            .main__content--dates{
-                border: 1px solid blue;
-                @include flex-half;
+      .main__content--dates {
+        // border: 1px solid blue;
+        @include flex-half;
 
-                label{
-                    font-size: 2rem;
-                    color: $off-black;
-                }
-                input{
-                    outline: 0;
-                    border: 1px solid $light-grey;
-                }
-            }
+        label {
+          font-size: 2rem;
+          color: $off-black;
         }
+        input {
+          outline: 0;
+          border: 1px solid $light-grey;
+          padding: 1.5rem 1rem;
+
+          &::placeholder{
+            font-size: 1.3rem;
+            font-weight: 800;
+          }
+        }
+      }
     }
+  }
 }

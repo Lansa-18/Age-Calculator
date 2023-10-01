@@ -31,7 +31,6 @@ html {
 
 main {
   background-color: hsl(0, 0%, 100%);
-  border: 1px solid red;
   position: absolute;
   top: 50%;
   transform: translate(50%, -50%);
@@ -40,12 +39,15 @@ main {
   height: 70%;
 }
 main .main__content .main__contents--top {
+  border-bottom: 1px solid hsl(0, 0%, 86%);
+  width: 90%;
+  padding: 2rem 0;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 main .main__content .main__contents--top .main__content--dates {
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -57,6 +59,11 @@ main .main__content .main__contents--top .main__content--dates label {
 main .main__content .main__contents--top .main__content--dates input {
   outline: 0;
   border: 1px solid hsl(0, 0%, 86%);
+  padding: 1.5rem 1rem;
+}
+main .main__content .main__contents--top .main__content--dates input::placeholder {
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 /*# sourceMappingURL=main.css.map */
