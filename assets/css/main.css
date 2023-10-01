@@ -35,6 +35,8 @@ html {
   border-radius: 50%;
   padding: 1rem;
   position: absolute;
+  right: 3rem;
+  top: 8.5rem;
 }
 
 main {
@@ -49,11 +51,12 @@ main {
   border-top-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 17rem;
+  padding: 2.5rem 0 2.5rem 2.5rem;
 }
 main .main__content .main__contents--top {
   border-bottom: 1px solid hsl(0, 0%, 86%);
-  width: 90%;
-  padding: 2.5rem 0 2.5rem 2.5rem;
+  width: 82%;
+  padding: 0 0 2.3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

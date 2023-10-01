@@ -11,12 +11,13 @@ main {
   border-top-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
   border-bottom-right-radius: 17rem;
+    padding: 2.5rem 0 2.5rem 2.5rem;
 
   .main__content {
     .main__contents--top {
       border-bottom: 1px solid $light-grey;
-      width: 90%;
-      padding: 2.5rem 0 2.5rem 2.5rem;
+      width: 82%;
+      padding: 0 0 2.3rem 0;
     //   margin: auto;
       @include flex-comp;
 
