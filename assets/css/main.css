@@ -1,7 +1,3 @@
-h1 {
-  color: red;
-}
-
 *,
 *::after,
 *::before {
@@ -27,6 +23,12 @@ html {
   html {
     font-size: 50%;
   }
+}
+
+main {
+  background-color: hsl(259, 100%, 65%);
+  width: 200px;
+  height: 200px;
 }
 
 /*# sourceMappingURL=main.css.map */
