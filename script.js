@@ -13,8 +13,20 @@ const allLabels = document.querySelectorAll('label');
 const todaysDate = new Date();
 console.log(todaysDate);
 
+const initialize = () => {
+    allErrorSpan.forEach(span => span.classList.add('hidden'));
+    allInputs.forEach(
+      input => (input.style.border = '1px solid hsl(0, 0%, 86%)')
+    );
+    allLabels.forEach(label => (label.style.color = 'hsl(0, 0%, 8%)'));
+}
+
 // Function that calculates the age difference
 const calcAge = function () {
+
+
+
+
   // Getting the Date from the user
   const ageInput = new Date(
     yearInput.value,
@@ -31,6 +43,8 @@ const calcAge = function () {
   document.querySelector('.years-span').textContent = yearDifference;
   document.querySelector('.month-span').textContent = monthDifference;
   document.querySelector('.days-span').textContent = dayDifference;
+
+  dayInput.value = monthInput.value = yearInput.value = '';
 
   // return {yearDifference, monthDifference, dayDifference};
 };
@@ -49,6 +63,7 @@ submitBtn.addEventListener('click', function (e) {
     );
     allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
   } else {
+    initialize();
     calcAge();
   }
 
