@@ -31,6 +31,10 @@ html {
   }
 }
 
+.mtop-v-small {
+  margin-top: 0.8rem;
+}
+
 .mtop-small {
   margin-top: 1.5rem;
 }
@@ -74,7 +78,7 @@ main .main__content .main__contents--top .main__content--dates {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 main .main__content .main__contents--top .main__content--dates label {
   font-size: 1.1rem;

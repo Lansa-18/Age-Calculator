@@ -23,6 +23,7 @@ main {
       .main__content--dates {
         position: relative;
         @include flex-half;
+        gap: .8rem;
 
         label {
           font-size: 1.1rem;

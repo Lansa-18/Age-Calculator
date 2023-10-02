@@ -24,8 +24,12 @@ submitBtn.addEventListener('click', function(e){
         console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
     }
 
-    if (yearInput.value > ) {
-        
+    if (yearInput.value > todaysDate.getFullYear()) {
+        allErrorSpan[2].classList.remove('hidden');
+        allErrorSpan[2].textContent = 'Must be in the past';
+    } else {
+        allErrorSpan[2].classList.add('hidden')
+        console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
     }
 })
 
