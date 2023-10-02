@@ -73,7 +73,7 @@ main .main__content .main__contents--top .main__content--dates {
   gap: 0.9rem;
 }
 main .main__content .main__contents--top .main__content--dates label {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 650;
   color: hsl(0, 0%, 8%);
   text-transform: uppercase;
