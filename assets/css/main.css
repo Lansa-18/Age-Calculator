@@ -35,6 +35,10 @@ html {
   margin-top: 1.5rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .main__contents--top--btn {
   background-color: hsl(259, 100%, 65%);
   border: none;
