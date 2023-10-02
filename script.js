@@ -9,52 +9,51 @@ const allErrorSpan = document.querySelectorAll('.error-span');
 const allInputs = document.querySelectorAll('.input');
 const allLabels = document.querySelectorAll('label');
 
-
 // Today's Date
 const todaysDate = new Date();
 console.log(todaysDate);
 
-// Getting the Date from the user
-const ageInput = new Date(yearInput.value, monthInput.value -1, dayInput.value);
-const difference = todaysDate.getTime() - ageInput.getTime();
-
 // Function that calculates the age difference
-const calcAge = function(milliseconds){
-    const duration = new Date (milliseconds);
-    const yearDifference = duration.getUTCFullYear() - 1970;
-    const monthDifference = duration.getUTCMonth();
-    const dayDifference = duration.getUTCDate() - 1;
+const calcAge = function () {
+  // Getting the Date from the user
+  const ageInput = new Date(
+    yearInput.value,
+    monthInput.value - 1,
+    dayInput.value
+  );
 
-    // document.querySelector('.years-span').textContent = yearDifference;
-    // document.querySelector('.month-span').textContent = monthDifference;
-    // document.querySelector('.days-span').textContent = dayDifference;
+  const difference = todaysDate.getTime() - ageInput.getTime();
+  const duration = new Date(difference);
+  const yearDifference = duration.getUTCFullYear() - 1970;
+  const monthDifference = duration.getUTCMonth();
+  const dayDifference = duration.getUTCDate() - 1;
 
-    // return {yearDifference, monthDifference, dayDifference};
-}
+  document.querySelector('.years-span').textContent = yearDifference;
+  document.querySelector('.month-span').textContent = monthDifference;
+  document.querySelector('.days-span').textContent = dayDifference;
 
+  // return {yearDifference, monthDifference, dayDifference};
+};
 
 // Implementing the submit functionality when input is empty.
-submitBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    calcAge(difference);
-    // if (dayInput.value === '' && monthInput.value === '' && yearInput.value === '') {
-    //     allErrorSpan.forEach(span => span.classList.remove('hidden'));
-    //     allInputs.forEach(input => input.style.border = '1px solid hsl(0, 100%, 67%)');
-    //     allLabels.forEach(label => label.style.color = 'hsl(0, 100%, 67%)');
-    // } else {
-    //     console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
-    // }
+submitBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  calcAge();
+  // if (dayInput.value === '' && monthInput.value === '' && yearInput.value === '') {
+  //     allErrorSpan.forEach(span => span.classList.remove('hidden'));
+  //     allInputs.forEach(input => input.style.border = '1px solid hsl(0, 100%, 67%)');
+  //     allLabels.forEach(label => label.style.color = 'hsl(0, 100%, 67%)');
+  // } else {
+  //     console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
+  // }
 
-    // if (yearInput.value > todaysDate.getFullYear()) {
-    //     allErrorSpan[2].classList.remove('hidden');
-    //     allErrorSpan[2].textContent = 'Must be in the past';
-    // } else {
-    //     allErrorSpan[2].classList.add('hidden')
-    //     console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
-    // }
-})
-
-
-
+  // if (yearInput.value > todaysDate.getFullYear()) {
+  //     allErrorSpan[2].classList.remove('hidden');
+  //     allErrorSpan[2].textContent = 'Must be in the past';
+  // } else {
+  //     allErrorSpan[2].classList.add('hidden')
+  //     console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
+  // }
+});
 
 // console.log(todaysDate.getTime());
