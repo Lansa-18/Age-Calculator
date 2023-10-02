@@ -25,7 +25,9 @@ const calcAge = function(milliseconds){
     const monthDifference = duration.getUTCMonth();
     const dayDifference = duration.getUTCDate() - 1;
 
-    document.querySelector('.years-span')
+    document.querySelector('.years-span').textContent = yearDifference;
+    document.querySelector('.month-span').textContent = monthDifference;
+    document.querySelector('.days-span').textContent = dayDifference;
 
     // return {yearDifference, monthDifference, dayDifference};
 }
