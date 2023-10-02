@@ -1,8 +1,7 @@
 'use strict';
-console.log('Hello Kareem');
 
 // ELEMENTS
-const dayInput = document.querySelector('#day').value;
+const dayInput = document.querySelector('#day');
 const monthInput = document.querySelector('#month');
 const yearInput = document.querySelector('#year');
 const submitBtn = document.querySelector('#submit');
@@ -10,17 +9,32 @@ const allErrorSpan = document.querySelectorAll('.error-span');
 const allInputs = document.querySelectorAll('.input');
 const allLabels = document.querySelectorAll('label');
 
-// Function that calculattes the age
-const calcAge = function(){
-    
-}
 
 // Today's Date
 const todaysDate = new Date();
-// Implementing the submit functionality when input is empty.
+console.log(todaysDate);
 
+// Getting the Date from the user
+const ageInput = new Date(yearInput.value, monthInput.value -1, dayInput.value);
+const difference = todaysDate.getTime() - ageInput.getTime();
+
+// Function that calculates the age difference
+const calcAge = function(milliseconds){
+    const duration = new Date (milliseconds);
+    const yearDifference = duration.getUTCFullYear() - 1970;
+    const monthDifference = duration.getUTCMonth();
+    const dayDifference = duration.getUTCDate() - 1;
+
+    document.querySelector('.years-span')
+
+    // return {yearDifference, monthDifference, dayDifference};
+}
+
+
+// Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function(e){
-    e.preventDefault()
+    e.preventDefault();
+    calcAge();
     // if (dayInput.value === '' && monthInput.value === '' && yearInput.value === '') {
     //     allErrorSpan.forEach(span => span.classList.remove('hidden'));
     //     allInputs.forEach(input => input.style.border = '1px solid hsl(0, 100%, 67%)');
@@ -38,7 +52,7 @@ submitBtn.addEventListener('click', function(e){
     // }
 })
 
-// console.log(todaysDate);
 
 
-console.log(todaysDate.getTime());
+
+// console.log(todaysDate.getTime());
