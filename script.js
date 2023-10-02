@@ -25,9 +25,9 @@ const calcAge = function(milliseconds){
     const monthDifference = duration.getUTCMonth();
     const dayDifference = duration.getUTCDate() - 1;
 
-    document.querySelector('.years-span').textContent = yearDifference;
-    document.querySelector('.month-span').textContent = monthDifference;
-    document.querySelector('.days-span').textContent = dayDifference;
+    // document.querySelector('.years-span').textContent = yearDifference;
+    // document.querySelector('.month-span').textContent = monthDifference;
+    // document.querySelector('.days-span').textContent = dayDifference;
 
     // return {yearDifference, monthDifference, dayDifference};
 }
@@ -36,7 +36,7 @@ const calcAge = function(milliseconds){
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function(e){
     e.preventDefault();
-    calcAge();
+    calcAge(difference);
     // if (dayInput.value === '' && monthInput.value === '' && yearInput.value === '') {
     //     allErrorSpan.forEach(span => span.classList.remove('hidden'));
     //     allInputs.forEach(input => input.style.border = '1px solid hsl(0, 100%, 67%)');
