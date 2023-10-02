@@ -38,14 +38,19 @@ const calcAge = function () {
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
   e.preventDefault();
-  calcAge();
-  // if (dayInput.value === '' && monthInput.value === '' && yearInput.value === '') {
-  //     allErrorSpan.forEach(span => span.classList.remove('hidden'));
-  //     allInputs.forEach(input => input.style.border = '1px solid hsl(0, 100%, 67%)');
-  //     allLabels.forEach(label => label.style.color = 'hsl(0, 100%, 67%)');
-  // } else {
-  //     console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
-  // }
+  if (
+    dayInput.value === '' &&
+    monthInput.value === '' &&
+    yearInput.value === ''
+  ) {
+    allErrorSpan.forEach(span => span.classList.remove('hidden'));
+    allInputs.forEach(
+      input => (input.style.border = '1px solid hsl(0, 100%, 67%)')
+    );
+    allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
+  } else {
+    calcAge();
+  }
 
   // if (yearInput.value > todaysDate.getFullYear()) {
   //     allErrorSpan[2].classList.remove('hidden');
