@@ -15,16 +15,19 @@
             <div class="main__content--dates main__content--dates-day">
                 <label for="day">Day</label>
                 <input type="number" id="day" placeholder="DD" required>
+                <span class="error-span hidden">This Field is required</span>
             </div>
             <div class="main__content--dates main__content--dates-month">
                 <label for="month">Month</label>
                 <input type="number" id="month" placeholder="MM" required>
+                <span class="error-span hidden">This Field is required</span>
             </div>
             <div class="main__content--dates main__content--dates-year">
                 <label for="year">Year</label>
                 <input type="number" id="year" placeholder="YYYY" required>
+                <span class="error-span hidden">This Field is required</span>
             </div>
-          <button type="submit" class="main__contents--top--btn">
+          <button type="submit" id="submit" class="main__contents--top--btn">
             <img class="submit-img" src="./images/icon-arrow.svg" alt="submit-icon">
           </button>
         </form>

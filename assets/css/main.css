@@ -76,6 +76,7 @@ main .main__content .main__contents--top .main__content--dates label {
   font-size: 1.2rem;
   font-weight: 650;
   color: hsl(0, 0%, 8%);
+  text-transform: uppercase;
 }
 main .main__content .main__contents--top .main__content--dates input {
   outline: 0;
@@ -87,6 +88,10 @@ main .main__content .main__contents--top .main__content--dates input {
 main .main__content .main__contents--top .main__content--dates input::placeholder {
   font-size: 1.3rem;
   font-weight: 800;
+}
+main .main__content .main__contents--top .main__content--dates .error-span {
+  color: hsl(0, 100%, 67%);
+  font-size: 0.95rem;
 }
 main .main__content .main__contents--bottom {
   padding: 2rem 0;

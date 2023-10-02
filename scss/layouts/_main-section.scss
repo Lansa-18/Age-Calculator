@@ -28,6 +28,7 @@ main {
           font-size: 1.2rem;
           font-weight: 650;
           color: $off-black;
+          text-transform: uppercase;
         }
         input {
           outline: 0;
@@ -40,6 +41,11 @@ main {
             font-size: 1.3rem;
             font-weight: 800;
           }
+        }
+
+        .error-span{
+            color: $light-red;
+            font-size: .95rem;
         }
       }
     }
