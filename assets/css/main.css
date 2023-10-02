@@ -31,6 +31,10 @@ html {
   }
 }
 
+.mtop-small {
+  margin-top: 1.5rem;
+}
+
 .main__contents--top--btn {
   background-color: hsl(259, 100%, 65%);
   border: none;
@@ -95,6 +99,9 @@ main .main__content .main__contents--bottom {
 }
 main .main__content .main__contents--bottom span {
   color: hsl(259, 100%, 65%);
+}
+main .attribution {
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
