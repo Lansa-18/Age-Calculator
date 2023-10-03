@@ -14,16 +14,15 @@ const endDate = new Date();
 console.log(endDate);
 
 const initialize = () => {
-    allErrorSpan.forEach(span => span.classList.add('hidden'));
-    allInputs.forEach(
-      input => (input.style.border = '1px solid hsl(0, 0%, 86%)')
-    );
-    allLabels.forEach(label => (label.style.color = 'hsl(0, 0%, 8%)'));
-}
+  allErrorSpan.forEach(span => span.classList.add('hidden'));
+  allInputs.forEach(
+    input => (input.style.border = '1px solid hsl(0, 0%, 86%)')
+  );
+  allLabels.forEach(label => (label.style.color = 'hsl(0, 0%, 8%)'));
+};
 
 // Function that calculates the age difference
 const calcAge = function () {
-
   // Getting the Date from the user
   const startDate = new Date(
     yearInput.value,
@@ -34,24 +33,32 @@ const calcAge = function () {
   const difference = endDate.getTime() - startDate.getTime();
 
   // Calculating the years, months and days
-  const yearsDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
-  const monthDifference = endDate.getUTCMonth() - startDate.getUTCMonth();
-  const dayDifference = endDate.getUTCDate() - startDate.getUTCDate();
+  let yearDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
+  let monthDifference = endDate.getUTCMonth() - startDate.getUTCMonth();
+  let dayDifference = endDate.getUTCDate() - startDate.getUTCDate();
 
-    // Adjusting for negative values (when day or month is negative)
-    if (dayDifference < 0) {
-        
-    }
+  // Adjusting for negative values (when day or month is negative)
+  if (dayDifference < 0) {
+    monthDifference--; // Decrementing the month when the days are negative
+    const lastDayOfTheMonth = new Date(
+      endDate.getUTCFullYear(),
+      endDate.getUTCMonth(),
+      0
+    ).getUTCDate();
+    dayDifference += lastDayOfTheMonth;
+  }
 
-//   const yearDifference = duration.getUTCFullYear() - 1970;
-//   const monthDifference = duration.getUTCMonth();
-//   const dayDifference = duration.getUTCDate() - 1;
+  if (monthDifference < 0) {
+    yearDifference--;
+    console.log(yearDifference);
+    monthDifference += 12;
+  }
 
-//   document.querySelector('.years-span').textContent = yearDifference;
-//   document.querySelector('.month-span').textContent = monthDifference;
-//   document.querySelector('.days-span').textContent = dayDifference;
+  document.querySelector('.years-span').textContent = yearDifference;
+  document.querySelector('.month-span').textContent = monthDifference;
+  document.querySelector('.days-span').textContent = dayDifference;
 
-  dayInput.value = monthInput.value = yearInput.value = '';
+  //   dayInput.value = monthInput.value = yearInput.value = '';
 };
 
 // Implementing the submit functionality when input is empty.
