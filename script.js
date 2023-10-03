@@ -13,6 +13,13 @@ const allLabels = document.querySelectorAll('label');
 const endDate = new Date();
 console.log(endDate);
 
+// const startDate = new Date(
+//   yearInput.value,
+//   monthInput.value - 1,
+//   dayInput.value
+// );
+// console.log(startDate);
+
 const initialize = () => {
   allErrorSpan.forEach(span => span.classList.add('hidden'));
   allInputs.forEach(
@@ -27,7 +34,7 @@ let dayDifference;
 
 // Function that calculates the age difference
 const calcAge = function () {
-  // Getting the Date from the user
+  //   Getting the Date from the user
   const startDate = new Date(
     yearInput.value,
     monthInput.value - 1,
@@ -64,11 +71,26 @@ const calcAge = function () {
 };
 
 // Function for checking months that have 31 days;
-const oddMonths = function(){
-    const oldMonths = [1,3,5,7,8,10,12];
+const calcOddMonths = function () {
+//   const startDate = new Date(
+//     yearInput.value,
+//     monthInput.value - 1,
+//     dayInput.value
+//   );
 
-}
+  const oddMonths = [1, 3, 5, 7, 8, 10, 12];
 
+  oddMonths.forEach((month, i, arr) => {
+    if (dayInput.value > 0 && dayInput.value <= 31 && monthInput.value === month && dayInput.value !== '') {
+        calcAge();
+    } else{
+        allErrorSpan[0].classList.remove('hidden')
+        allErrorSpan[0].textContent = 'Must be a valid day'
+    }
+  })
+};
+
+// calcOddMonths();
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -84,10 +106,9 @@ submitBtn.addEventListener('click', function (e) {
     allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
   } else {
     initialize();
+    calcOddMonths();
     calcAge();
   }
-
-
 
   // if (yearInput.value > todaysDate.getFullYear()) {
   //     allErrorSpan[2].classList.remove('hidden');
