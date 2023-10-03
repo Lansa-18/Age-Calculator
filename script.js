@@ -33,11 +33,13 @@ const calcAge = function () {
 
   const difference = endDate.getTime() - startDate.getTime();
 
-  // Calculating the years
-  const yearsDifference = 
+  // Calculating the years, months and days
+  const yearsDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
+  const monthDifference = endDate.getUTCMonth() - startDate.getUTCMonth();
+  const dayDifference = endDate.getUTCDate() - startDate.getUTCDate();
 
-//   const duration = new Date(difference);
-
+    // Adjusting the day if the value is negative
+    
 
 //   const yearDifference = duration.getUTCFullYear() - 1970;
 //   const monthDifference = duration.getUTCMonth();
