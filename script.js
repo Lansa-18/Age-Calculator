@@ -38,8 +38,10 @@ const calcAge = function () {
   const monthDifference = endDate.getUTCMonth() - startDate.getUTCMonth();
   const dayDifference = endDate.getUTCDate() - startDate.getUTCDate();
 
-    // Adjusting the day if the value is negative
-    
+    // Adjusting for negative values (when day or month is negative)
+    if (dayDifference < 0) {
+        
+    }
 
 //   const yearDifference = duration.getUTCFullYear() - 1970;
 //   const monthDifference = duration.getUTCMonth();
