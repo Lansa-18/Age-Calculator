@@ -21,6 +21,10 @@ const initialize = () => {
   allLabels.forEach(label => (label.style.color = 'hsl(0, 0%, 8%)'));
 };
 
+let yearDifference;
+let monthDifference;
+let dayDifference;
+
 // Function that calculates the age difference
 const calcAge = function () {
   // Getting the Date from the user
@@ -30,12 +34,10 @@ const calcAge = function () {
     dayInput.value
   );
 
-  const difference = endDate.getTime() - startDate.getTime();
-
   // Calculating the years, months and days
-  let yearDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
-  let monthDifference = endDate.getUTCMonth() - startDate.getUTCMonth();
-  let dayDifference = endDate.getUTCDate() - startDate.getUTCDate();
+  yearDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
+  monthDifference = endDate.getUTCMonth() - startDate.getUTCMonth();
+  dayDifference = endDate.getUTCDate() - startDate.getUTCDate();
 
   // Adjusting for negative values (when day or month is negative)
   if (dayDifference < 0) {
@@ -61,6 +63,12 @@ const calcAge = function () {
   //   dayInput.value = monthInput.value = yearInput.value = '';
 };
 
+// Function for checking months that have 31 days;
+const oddMonths = function(){
+    const oldMonths = [1,3,5,7,8,10,12];
+
+}
+
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -78,6 +86,8 @@ submitBtn.addEventListener('click', function (e) {
     initialize();
     calcAge();
   }
+
+
 
   // if (yearInput.value > todaysDate.getFullYear()) {
   //     allErrorSpan[2].classList.remove('hidden');
