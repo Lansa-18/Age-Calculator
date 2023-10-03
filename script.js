@@ -10,8 +10,8 @@ const allInputs = document.querySelectorAll('.input');
 const allLabels = document.querySelectorAll('label');
 
 // Today's Date
-const todaysDate = new Date();
-console.log(todaysDate);
+const endDate = new Date();
+console.log(endDate);
 
 const initialize = () => {
     allErrorSpan.forEach(span => span.classList.add('hidden'));
@@ -25,16 +25,20 @@ const initialize = () => {
 const calcAge = function () {
 
   // Getting the Date from the user
-  const ageInput = new Date(
+  const startDate = new Date(
     yearInput.value,
     monthInput.value - 1,
     dayInput.value
   );
 
-  const difference = todaysDate.getTime() - ageInput.getTime();
-  const duration = new Date(difference);
+  const difference = endDate.getTime() - startDate.getTime();
 
-  
+  // Calculating the years
+  const yearsDifference = 
+
+//   const duration = new Date(difference);
+
+
 //   const yearDifference = duration.getUTCFullYear() - 1970;
 //   const monthDifference = duration.getUTCMonth();
 //   const dayDifference = duration.getUTCDate() - 1;
