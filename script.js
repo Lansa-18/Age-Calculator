@@ -24,9 +24,6 @@ const initialize = () => {
 // Function that calculates the age difference
 const calcAge = function () {
 
-
-
-
   // Getting the Date from the user
   const ageInput = new Date(
     yearInput.value,
@@ -36,17 +33,17 @@ const calcAge = function () {
 
   const difference = todaysDate.getTime() - ageInput.getTime();
   const duration = new Date(difference);
-  const yearDifference = duration.getUTCFullYear() - 1970;
-  const monthDifference = duration.getUTCMonth();
-  const dayDifference = duration.getUTCDate() - 1;
 
-  document.querySelector('.years-span').textContent = yearDifference;
-  document.querySelector('.month-span').textContent = monthDifference;
-  document.querySelector('.days-span').textContent = dayDifference;
+  
+//   const yearDifference = duration.getUTCFullYear() - 1970;
+//   const monthDifference = duration.getUTCMonth();
+//   const dayDifference = duration.getUTCDate() - 1;
+
+//   document.querySelector('.years-span').textContent = yearDifference;
+//   document.querySelector('.month-span').textContent = monthDifference;
+//   document.querySelector('.days-span').textContent = dayDifference;
 
   dayInput.value = monthInput.value = yearInput.value = '';
-
-  // return {yearDifference, monthDifference, dayDifference};
 };
 
 // Implementing the submit functionality when input is empty.
