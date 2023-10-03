@@ -70,30 +70,42 @@ const calcAge = function () {
   //   dayInput.value = monthInput.value = yearInput.value = '';
 };
 
-// Function for checking months that have 31 days;
-const calcOddMonths = function () {
-//   const startDate = new Date(
-//     yearInput.value,
-//     monthInput.value - 1,
-//     dayInput.value
-//   );
+const oddMonths = [1, 3, 5, 7, 8, 10, 12];
+const evenMonths = [4, 6, 9, 11];
+const leap = [2];
 
-  const oddMonths = [1, 3, 5, 7, 8, 10, 12];
-
-  oddMonths.forEach((month, i, arr) => {
-    if (dayInput.value > 0 && dayInput.value <= 31 && monthInput.value === month && dayInput.value !== '') {
-        calcAge();
-    } else{
-        allErrorSpan[0].classList.remove('hidden')
-        allErrorSpan[0].textContent = 'Must be a valid day'
+const chechDays = function (typeMonth, num) {
+  typeMonth.forEach((month) => {
+    if (
+      dayInput.value > 0 &&
+      dayInput.value <= num &&
+      monthInput.value === month &&
+      dayInput.value !== ''
+    ) {
+      calcAge();
+    } else {
+      allErrorSpan[0].classList.remove('hidden');
+      allErrorSpan[0].textContent = 'Must be a valid day';
     }
-  })
+  });
 };
 
-// calcOddMonths();
+// Function for checking months that have 31 days;
+const calctypeMonths = function () {};
+
+// Functions for checking months that over 'DECEMBER'
+const checkMoreThan12 = function () {
+  const monthsInYear = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  monthsInYear.forEach(month => {
+    if (monthInput.value > 0 && monthInput.value <= 12) {
+    }
+  });
+};
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
   e.preventDefault();
+
   if (
     dayInput.value === '' &&
     monthInput.value === '' &&
