@@ -74,31 +74,33 @@ const calcAge = function () {
 };
 
 // Ensuring that the number of days corresponds to the expected number of days in the specified month.
-const oddMonths = [1, 3, 5, 7, 8, 10, 12];
-const evenMonths = [4, 6, 9, 11];
-const leap = [2];
+// const oddMonths = [1, 3, 5, 7, 8, 10, 12];
+// const evenMonths = [4, 6, 9, 11];
+// const leap = [2];
 
-const checkDays = function (typeMonth, num) {
-  const day = parseInt(dayInput.value);
-  const month = parseInt(monthInput.value);
+// const checkDays = function (typeMonth, num) {
+//   const day = parseInt(dayInput.value);
+//   const month = parseInt(monthInput.value);
 
-  if (
-    !isNaN(day) &&
-    !isNaN(month) &&
-    day > 0 &&
-    month >= 1 &&
-    month <= 13 &&
-    ((typeMonth.includes(month) && day <= num) || // Check for months with 31 or 30 days
-      (leap.includes(month) && day <= 29)) // Check for February (leap year)
-  ) {
-    allErrorSpan[0].classList.add('hidden');
-    calcAge();
-  } else {
-    allErrorSpan[0].classList.remove('hidden');
-    allErrorSpan[0].textContent = 'Must be a valid day';
-    // reset();
-  }
-};
+//   console.log(`Day: ${day}, Month: ${month}`);
+
+//   if (
+//     !isNaN(day) &&
+//     !isNaN(month) &&
+//     day > 0 &&
+//     month >= 1 &&
+//     month <= 12 &&
+//     ((typeMonth.includes(month) && day <= num) || // Check for months with 31 or 30 days
+//       (leap.includes(month) && day <= 29)) // Check for February (leap year)
+//   ) {
+//     allErrorSpan[0].classList.add('hidden');
+//     calcAge();
+//   } else {
+//     allErrorSpan[0].classList.remove('hidden');
+//     allErrorSpan[0].textContent = 'Must be a valid day';
+//     // reset();
+//   }
+// };
 
 
 // Implementing the submit functionality when input is empty.
@@ -118,8 +120,8 @@ submitBtn.addEventListener('click', function (e) {
   } else {
     initialize();
     // calcAge();
-    checkDays(oddMonths, 31);
-    checkDays(evenMonths, 30);
+    // checkDays(oddMonths, 31);
+    // checkDays(evenMonths, 30);
   }
 
 });
