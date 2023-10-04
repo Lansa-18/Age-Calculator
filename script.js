@@ -54,6 +54,14 @@ const isValidDate = (day, month, year) => {
       allErrorSpan[1].classList.remove('hidden');
       allErrorSpan[1].textContent = 'Must be a Valid Month'
     }
+
+    // Checking if year is within range
+    if (year > endDate.getUTCFullYear()) {
+        console.log('YEAR IS GREATER');
+        allErrorSpan[2].classList.remove('hidden');
+        allErrorSpan[2].textContent = 'Must be in the past';
+        // reset();
+    }
   
     // Determine the maximum number of days for the given month
     let maxDays;
