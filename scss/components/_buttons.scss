@@ -8,4 +8,9 @@
     position: absolute;
     right: 3rem;
     top: 8.5rem;
+    transition: all .3s;
+
+    &:hover{
+        background-color: $off-black;
+    }
 }

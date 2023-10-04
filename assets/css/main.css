@@ -51,6 +51,10 @@ html {
   position: absolute;
   right: 3rem;
   top: 8.5rem;
+  transition: all 0.3s;
+}
+.main__contents--top--btn:hover {
+  background-color: hsl(0, 0%, 8%);
 }
 
 main {
