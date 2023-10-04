@@ -74,24 +74,28 @@ const oddMonths = [1, 3, 5, 7, 8, 10, 12];
 const evenMonths = [4, 6, 9, 11];
 const leap = [2];
 
-const chechDays = function (typeMonth, num) {
-  typeMonth.forEach((month) => {
-    if (
+const checkDays = function (typeMonth, num) {
+  const isValid = typeMonth.some(month => {
+    return (
       dayInput.value > 0 &&
       dayInput.value <= num &&
       monthInput.value === month &&
       dayInput.value !== ''
-    ) {
-      calcAge();
-    } else {
-      allErrorSpan[0].classList.remove('hidden');
-      allErrorSpan[0].textContent = 'Must be a valid day';
-    }
+    );
   });
+
+  if (!isValid) {
+    allErrorSpan[0].classList.remove('hidden');
+    allErrorSpan[0].textContent = 'Must be a valid day';
+  } else {
+    calcAge();
+  }
 };
 
 // Function for checking months that have 31 days;
-const calctypeMonths = function () {};
+// const calctypeMonths = function () {
+
+// };
 
 // Functions for checking months that over 'DECEMBER'
 const checkMoreThan12 = function () {
@@ -102,6 +106,7 @@ const checkMoreThan12 = function () {
     }
   });
 };
+
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -118,7 +123,8 @@ submitBtn.addEventListener('click', function (e) {
     allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
   } else {
     initialize();
-    calcOddMonths();
+    checkDays(oddMonths, 31);
+    checkDays(evenMonths, 30);
     calcAge();
   }
 
