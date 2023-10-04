@@ -32,7 +32,9 @@ const initialize = () => {
 };
 
 const reset = () => {
-
+   yearSpan.textContent = '--';
+   monthSpan.textContent = '--';
+   daySpan.textContent = '--';
 }
 
 let yearDifference;
@@ -70,9 +72,9 @@ const calcAge = function () {
     monthDifference += 12;
   }
 
-  document.querySelector('.years-span').textContent = yearDifference;
-  document.querySelector('.month-span').textContent = monthDifference;
-  document.querySelector('.days-span').textContent = dayDifference;
+  yearSpan.textContent = yearDifference;
+  monthSpan.textContent = monthDifference;
+  daySpan.textContent = dayDifference;
 
   //   dayInput.value = monthInput.value = yearInput.value = '';
 };
@@ -122,7 +124,7 @@ const checkDays = function(typeMonth, num) {
   } else {
     allErrorSpan[0].classList.remove('hidden');
     allErrorSpan[0].textContent = 'Must be a valid day';
-
+    reset();
   }
 };
 
@@ -153,9 +155,9 @@ submitBtn.addEventListener('click', function (e) {
     allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
   } else {
     initialize();
+    calcAge();
     checkDays(oddMonths, 31);
     checkDays(evenMonths, 30);
-    calcAge();
   }
 
   // if (yearInput.value > todaysDate.getFullYear()) {
