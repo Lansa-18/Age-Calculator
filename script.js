@@ -8,6 +8,9 @@ const submitBtn = document.querySelector('#submit');
 const allErrorSpan = document.querySelectorAll('.error-span');
 const allInputs = document.querySelectorAll('.input');
 const allLabels = document.querySelectorAll('label');
+const yearSpan = document.querySelector('.years-span');
+const monthSpan = document.querySelector('.month-span')
+const daySpan = document.querySelector('.days-span')
 
 // Today's Date
 const endDate = new Date();
@@ -27,6 +30,10 @@ const initialize = () => {
   );
   allLabels.forEach(label => (label.style.color = 'hsl(0, 0%, 8%)'));
 };
+
+const reset = () => {
+
+}
 
 let yearDifference;
 let monthDifference;
@@ -70,42 +77,65 @@ const calcAge = function () {
   //   dayInput.value = monthInput.value = yearInput.value = '';
 };
 
+// const oddMonths = [1, 3, 5, 7, 8, 10, 12];
+// const evenMonths = [4, 6, 9, 11];
+// const leap = [2];
+
+// const checkDays = function (typeMonth, num) {
+//   const isValid = typeMonth.some(month => {
+//     return (
+//       dayInput.value > 0 &&
+//       dayInput.value <= num &&
+//       monthInput.value === month &&
+//       dayInput.value !== ''
+//     );
+//   });
+
+//   if (!isValid) {
+//     allErrorSpan[0].classList.remove('hidden');
+    // allErrorSpan[0].textContent = 'Must be a valid day';
+//   } else {
+//     calcAge();
+//   }
+// };
+
 const oddMonths = [1, 3, 5, 7, 8, 10, 12];
 const evenMonths = [4, 6, 9, 11];
 const leap = [2];
 
-const checkDays = function (typeMonth, num) {
-  const isValid = typeMonth.some(month => {
-    return (
-      dayInput.value > 0 &&
-      dayInput.value <= num &&
-      monthInput.value === month &&
-      dayInput.value !== ''
-    );
-  });
+const checkDays = function(typeMonth, num) {
+  const day = parseInt(dayInput.value);
+  const month = parseInt(monthInput.value);
 
-  if (!isValid) {
+  if (
+    !isNaN(day) &&
+    !isNaN(month) &&
+    day > 0 &&
+    month >= 1 && month <= 12 &&
+    (
+      (typeMonth.includes(month) && day <= num) || // Check for months with 31 or 30 days
+      (leap.includes(month) && day <= 29) // Check for February (leap year)
+    )
+  ) {
+    allErrorSpan[0].classList.add('hidden');
+    calcAge();
+  } else {
     allErrorSpan[0].classList.remove('hidden');
     allErrorSpan[0].textContent = 'Must be a valid day';
-  } else {
-    calcAge();
+
   }
 };
 
-// Function for checking months that have 31 days;
-// const calctypeMonths = function () {
 
+// // Functions for checking months that over 'DECEMBER'
+// const checkMoreThan12 = function () {
+//   const monthsInYear = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+//   monthsInYear.forEach(month => {
+//     if (monthInput.value > 0 && monthInput.value <= 12) {
+//     }
+//   });
 // };
-
-// Functions for checking months that over 'DECEMBER'
-const checkMoreThan12 = function () {
-  const monthsInYear = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
-  monthsInYear.forEach(month => {
-    if (monthInput.value > 0 && monthInput.value <= 12) {
-    }
-  });
-};
 
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
