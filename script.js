@@ -16,12 +16,6 @@ const daySpan = document.querySelector('.days-span');
 const endDate = new Date();
 console.log(endDate);
 
-// const startDate = new Date(
-//   yearInput.value,
-//   monthInput.value - 1,
-//   dayInput.value
-// );
-// console.log(startDate);
 
 const initialize = () => {
   allErrorSpan.forEach(span => span.classList.add('hidden'));
@@ -49,6 +43,7 @@ const calcAge = function () {
     monthInput.value - 1,
     dayInput.value
   );
+  console.log(startDate);
 
   // Calculating the years, months and days
   yearDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
@@ -68,7 +63,6 @@ const calcAge = function () {
 
   if (monthDifference < 0) {
     yearDifference--;
-    console.log(yearDifference);
     monthDifference += 12;
   }
 
@@ -80,7 +74,6 @@ const calcAge = function () {
 };
 
 // Ensuring that the number of days corresponds to the expected number of days in the specified month.
-
 const oddMonths = [1, 3, 5, 7, 8, 10, 12];
 const evenMonths = [4, 6, 9, 11];
 const leap = [2];
@@ -94,7 +87,7 @@ const checkDays = function (typeMonth, num) {
     !isNaN(month) &&
     day > 0 &&
     month >= 1 &&
-    month <= 12 &&
+    month <= 13 &&
     ((typeMonth.includes(month) && day <= num) || // Check for months with 31 or 30 days
       (leap.includes(month) && day <= 29)) // Check for February (leap year)
   ) {
@@ -103,19 +96,10 @@ const checkDays = function (typeMonth, num) {
   } else {
     allErrorSpan[0].classList.remove('hidden');
     allErrorSpan[0].textContent = 'Must be a valid day';
-    reset();
+    // reset();
   }
 };
 
-// // Functions for checking months that over 'DECEMBER'
-// const checkMoreThan12 = function () {
-//   const monthsInYear = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
-//   monthsInYear.forEach(month => {
-//     if (monthInput.value > 0 && monthInput.value <= 12) {
-//     }
-//   });
-// };
 
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
@@ -133,18 +117,10 @@ submitBtn.addEventListener('click', function (e) {
     allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
   } else {
     initialize();
-    calcAge();
+    // calcAge();
     checkDays(oddMonths, 31);
     checkDays(evenMonths, 30);
   }
 
-  // if (yearInput.value > todaysDate.getFullYear()) {
-  //     allErrorSpan[2].classList.remove('hidden');
-  //     allErrorSpan[2].textContent = 'Must be in the past';
-  // } else {
-  //     allErrorSpan[2].classList.add('hidden')
-  //     console.log(new Date (yearInput.value, monthInput.value - 1, dayInput.value));
-  // }
 });
 
-// console.log(todaysDate.getTime());
