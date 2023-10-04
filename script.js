@@ -41,6 +41,8 @@ const isValidDate = (day, month, year) => {
     day = parseInt(day);
     month = parseInt(month);
     year = parseInt(year);
+
+    console.log(day, month, year);
   
     // Check if input values are valid numbers
     if (isNaN(day) || isNaN(month) || isNaN(year)) {
@@ -78,6 +80,7 @@ const isValidDate = (day, month, year) => {
 
 // Function that calculates the age difference
 const calcAge = function () {
+
   //   Getting the Date from the user
   const startDate = new Date(
     yearInput.value,
@@ -90,6 +93,9 @@ const calcAge = function () {
   yearDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
   monthDifference = endDate.getUTCMonth() - startDate.getUTCMonth();
   dayDifference = endDate.getUTCDate() - startDate.getUTCDate();
+
+    // Validating Inputs 
+    isValidDate(dayInput.value, monthInput.value, yearInput);
 
   // Adjusting for negative values (when day or month is negative)
   if (dayDifference < 0) {
@@ -162,7 +168,7 @@ submitBtn.addEventListener('click', function (e) {
     allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
   } else {
     initialize();
-    // calcAge();
+    calcAge();
     // checkDays(oddMonths, 31);
     // checkDays(evenMonths, 30);
   }
