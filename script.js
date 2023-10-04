@@ -9,8 +9,8 @@ const allErrorSpan = document.querySelectorAll('.error-span');
 const allInputs = document.querySelectorAll('.input');
 const allLabels = document.querySelectorAll('label');
 const yearSpan = document.querySelector('.years-span');
-const monthSpan = document.querySelector('.month-span')
-const daySpan = document.querySelector('.days-span')
+const monthSpan = document.querySelector('.month-span');
+const daySpan = document.querySelector('.days-span');
 
 // Today's Date
 const endDate = new Date();
@@ -32,10 +32,10 @@ const initialize = () => {
 };
 
 const reset = () => {
-   yearSpan.textContent = '--';
-   monthSpan.textContent = '--';
-   daySpan.textContent = '--';
-}
+  yearSpan.textContent = '--';
+  monthSpan.textContent = '--';
+  daySpan.textContent = '--';
+};
 
 let yearDifference;
 let monthDifference;
@@ -79,33 +79,13 @@ const calcAge = function () {
   //   dayInput.value = monthInput.value = yearInput.value = '';
 };
 
-// const oddMonths = [1, 3, 5, 7, 8, 10, 12];
-// const evenMonths = [4, 6, 9, 11];
-// const leap = [2];
-
-// const checkDays = function (typeMonth, num) {
-//   const isValid = typeMonth.some(month => {
-//     return (
-//       dayInput.value > 0 &&
-//       dayInput.value <= num &&
-//       monthInput.value === month &&
-//       dayInput.value !== ''
-//     );
-//   });
-
-//   if (!isValid) {
-//     allErrorSpan[0].classList.remove('hidden');
-    // allErrorSpan[0].textContent = 'Must be a valid day';
-//   } else {
-//     calcAge();
-//   }
-// };
+// Ensuring that the number of days corresponds to the expected number of days in the specified month.
 
 const oddMonths = [1, 3, 5, 7, 8, 10, 12];
 const evenMonths = [4, 6, 9, 11];
 const leap = [2];
 
-const checkDays = function(typeMonth, num) {
+const checkDays = function (typeMonth, num) {
   const day = parseInt(dayInput.value);
   const month = parseInt(monthInput.value);
 
@@ -113,11 +93,10 @@ const checkDays = function(typeMonth, num) {
     !isNaN(day) &&
     !isNaN(month) &&
     day > 0 &&
-    month >= 1 && month <= 12 &&
-    (
-      (typeMonth.includes(month) && day <= num) || // Check for months with 31 or 30 days
-      (leap.includes(month) && day <= 29) // Check for February (leap year)
-    )
+    month >= 1 &&
+    month <= 12 &&
+    ((typeMonth.includes(month) && day <= num) || // Check for months with 31 or 30 days
+      (leap.includes(month) && day <= 29)) // Check for February (leap year)
   ) {
     allErrorSpan[0].classList.add('hidden');
     calcAge();
@@ -127,7 +106,6 @@ const checkDays = function(typeMonth, num) {
     reset();
   }
 };
-
 
 // // Functions for checking months that over 'DECEMBER'
 // const checkMoreThan12 = function () {
