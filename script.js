@@ -60,7 +60,7 @@ const isValidDate = (day, month, year) => {
         console.log('YEAR IS GREATER');
         allErrorSpan[2].classList.remove('hidden');
         allErrorSpan[2].textContent = 'Must be in the past';
-        // reset();
+        reset();
     }
   
     // Determine the maximum number of days for the given month
