@@ -39,6 +39,7 @@ main {
           width: 80%;
           font-weight: 900;
           font-size: 1.5rem;
+          cursor: pointer;
 
           &::placeholder{
             font-size: 1.3rem;
@@ -46,6 +47,10 @@ main {
           }
 
           &:focus{
+            border: 1px solid $purple;
+          }
+
+          &:hover{
             border: 1px solid $purple;
           }
           

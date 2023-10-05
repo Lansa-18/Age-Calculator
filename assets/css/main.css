@@ -98,12 +98,16 @@ main .main__content .main__contents--top .main__content--dates input {
   width: 80%;
   font-weight: 900;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 main .main__content .main__contents--top .main__content--dates input::placeholder {
   font-size: 1.3rem;
   font-weight: 800;
 }
 main .main__content .main__contents--top .main__content--dates input:focus {
+  border: 1px solid hsl(259, 100%, 65%);
+}
+main .main__content .main__contents--top .main__content--dates input:hover {
   border: 1px solid hsl(259, 100%, 65%);
 }
 main .main__content .main__contents--top .main__content--dates .error-span {
