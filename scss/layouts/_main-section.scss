@@ -24,6 +24,7 @@ main {
         position: relative;
         @include flex-half;
         gap: .8rem;
+        // border: 1px solid red;
 
         label {
           font-size: 1.1rem;
