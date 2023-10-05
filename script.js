@@ -31,6 +31,12 @@ const reset = () => {
   daySpan.textContent = '--';
 };
 
+const error = () =>{
+  allInputs.forEach(
+    input => (input.style.border = '1px solid hsl(0, 100%, 67%)')
+  );
+  allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
+}
 let yearDifference;
 let monthDifference;
 let dayDifference;
@@ -142,10 +148,7 @@ submitBtn.addEventListener('click', function (e) {
     yearInput.value === ''
   ) {
     allErrorSpan.forEach(span => span.classList.remove('hidden'));
-    allInputs.forEach(
-      input => (input.style.border = '1px solid hsl(0, 100%, 67%)')
-    );
-    allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
+    error();
   } else {
     initialize();
     calcAge();
