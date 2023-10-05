@@ -87,6 +87,7 @@ const isValidDate = (day, month, year) => {
     if (day < 1 || day > maxDays) {
       allErrorSpan[0].classList.remove('hidden');
       allErrorSpan[0].textContent = 'Must be a Valid Date';
+      error();
       reset();
     }
   

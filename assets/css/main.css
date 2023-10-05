@@ -40,7 +40,7 @@ html {
 }
 
 .hidden {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .main__contents--top--btn {
@@ -73,7 +73,7 @@ main {
 main .main__content .main__contents--top {
   border-bottom: 1px solid hsl(0, 0%, 86%);
   width: 82%;
-  padding: 0 0 2.3rem 0;
+  padding: 0 0 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
