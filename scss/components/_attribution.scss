@@ -1,6 +1,12 @@
 @use '../abstracts/' as *;
 
 .attribution {
+    border: 1px solid red;
+    text-align: center;
+
+    @include mq(475px){
+        width: 80%;
+    }
     a{
         font-size: 1.3rem;
         color: $light-red;

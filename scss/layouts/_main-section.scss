@@ -83,15 +83,13 @@ main {
         font-style: italic;
         letter-spacing: 1px;
 
+        @include mq(475px){
+          padding: 4.5rem 0;
+        }
+
         span{
             color: $purple;
         }
     }
-  }
-
-  .attribution{
-    text-align: center;
-    // border: 1px solid red;
-
   }
 }

@@ -79,6 +79,15 @@ html {
   background-color: hsl(0, 0%, 8%);
 }
 
+.attribution {
+  border: 1px solid red;
+  text-align: center;
+}
+@media (max-width: 29.679em) {
+  .attribution {
+    width: 80%;
+  }
+}
 .attribution a {
   font-size: 1.3rem;
   color: hsl(0, 100%, 67%);
@@ -161,11 +170,13 @@ main .main__content .main__contents--bottom {
   font-style: italic;
   letter-spacing: 1px;
 }
+@media (max-width: 29.679em) {
+  main .main__content .main__contents--bottom {
+    padding: 4.5rem 0;
+  }
+}
 main .main__content .main__contents--bottom span {
   color: hsl(259, 100%, 65%);
-}
-main .attribution {
-  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
