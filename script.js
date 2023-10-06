@@ -59,6 +59,8 @@ const isValidDate = (day, month, year) => {
     if (month < 1 || month > 12) {
       allErrorSpan[1].classList.remove('hidden');
       allErrorSpan[1].textContent = 'Must be a Valid Month';
+      error();
+      reset();
     }
 
     // Checking if year is within range
