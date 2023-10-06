@@ -16,7 +16,6 @@ const daySpan = document.querySelector('.days-span');
 const endDate = new Date();
 console.log(endDate);
 
-
 const initialize = () => {
   allErrorSpan.forEach(span => span.classList.add('hidden'));
   allInputs.forEach(
@@ -31,87 +30,83 @@ const reset = () => {
   daySpan.textContent = '--';
 };
 
-const error = () =>{
+const error = () => {
   allInputs.forEach(
     input => (input.style.border = '1px solid hsl(0, 100%, 67%)')
   );
   allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
-}
+};
 
 let str1 = 'Must be a Valid Date';
 let str2 = 'Must be a Valid Month';
 let str3 = 'Must be in the past';
 
-const errorMessage = (i, text) =>{
+const errorMessage = (i, text) => {
   allErrorSpan[i].classList.remove('hidden');
   allErrorSpan[i].textContent = text;
   error();
   reset();
-}
+};
 
 let yearDifference;
 let monthDifference;
 let dayDifference;
 
-
 const isValidDate = (day, month, year) => {
-    // Convert input to numbers
-    day = parseInt(day);
-    month = parseInt(month);
-    year = parseInt(year);
-  
-    // Check if month is within the valid range (1 to 12)
-    // if (month < 1 || month > 12) {
-    //   errorMessage(1, str2);
-    // }
+  // Convert input to numbers
+  day = parseInt(day);
+  month = parseInt(month);
+  year = parseInt(year);
 
-    // Checking if year is within range
-    if (year > endDate.getUTCFullYear()) {
-      errorMessage(2, str3)
-    }
+  // Check if month is within the valid range (1 to 12)
+  // if (month < 1 || month > 12) {
+  //   errorMessage(1, str2);
+  // }
 
-    // If the dateInput is greater than the current date, 
-    if (day > endDate.getUTCDate() && month >= endDate.getUTCMonth()) {
-      errorMessage(0, str3)
-    }
-  
-    // Determine the maximum number of days for the given month
-    let maxDays;
-    if ([1, 3, 5, 7, 8, 10, 12].includes(month)) {
-      maxDays = 31;
-    } else if ([4, 6, 9, 11].includes(month)) {
-      maxDays = 30;
-    } else { // February
-      if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-        maxDays = 29; // Leap year
-      } else {
-        maxDays = 28; // Non-leap year
-      }
-    }
-  
-    // Check if the day falls within the appropriate range
-    if (day < 1 || day > maxDays) {
-      allErrorSpan[0].classList.remove('hidden');
-      allErrorSpan[0].textContent = 'Must be a Valid Date';
-      error();
-      reset();
-    }
-  
-    return true; // Date is valid
-  };
-  
+  // Checking if year is within range
+  if (year > endDate.getUTCFullYear()) {
+    errorMessage(2, str3);
+  }
 
+  // If the dateInput is greater than the current date,
+  if (day > endDate.getUTCDate() && month >= endDate.getUTCMonth()) {
+    errorMessage(0, str3);
+  }
+
+  // Determine the maximum number of days for the given month
+  let maxDays;
+  if ([1, 3, 5, 7, 8, 10, 12].includes(month)) {
+    maxDays = 31;
+  } else if ([4, 6, 9, 11].includes(month)) {
+    maxDays = 30;
+  } else {
+    // February
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+      maxDays = 29; // Leap year
+    } else {
+      maxDays = 28; // Non-leap year
+    }
+  }
+
+  // Check if the day falls within the appropriate range
+  if (day < 1 || day > maxDays) {
+    allErrorSpan[0].classList.remove('hidden');
+    allErrorSpan[0].textContent = 'Must be a Valid Date';
+    error();
+    reset();
+  }
+
+  return true; // Date is valid
+};
 
 // Function that calculates the age difference
 const calcAge = function () {
-
   //   Getting the Date from the user
   const startDate = new Date(
     yearInput.value,
     monthInput.value - 1,
     dayInput.value
   );
-  console.log(startDate);
 
   // Calculating the years, months and days
   yearDifference = endDate.getUTCFullYear() - startDate.getUTCFullYear();
@@ -138,11 +133,9 @@ const calcAge = function () {
   monthSpan.textContent = monthDifference;
   daySpan.textContent = dayDifference;
 
-    // Validating Inputs 
-    isValidDate(dayInput.value, monthInput.value, yearInput.value);
-
+  // Validating Inputs
+  isValidDate(dayInput.value, monthInput.value, yearInput.value);
 };
-
 
 // Implementing the submit functionality when input is empty.
 submitBtn.addEventListener('click', function (e) {
@@ -159,6 +152,4 @@ submitBtn.addEventListener('click', function (e) {
     initialize();
     calcAge();
   }
-
 });
-
