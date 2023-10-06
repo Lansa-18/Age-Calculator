@@ -57,6 +57,12 @@ html {
   background-color: hsl(0, 0%, 8%);
 }
 
+.attribution a {
+  font-size: 1.3rem;
+  color: hsl(0, 100%, 67%);
+  font-weight: bolder;
+}
+
 main {
   background-color: hsl(0, 0%, 100%);
   position: absolute;

@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.attribution {
+    a{
+        font-size: 1.3rem;
+        color: $light-red;
+        font-weight: bolder;
+    }
+}
