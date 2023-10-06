@@ -37,6 +37,18 @@ const error = () =>{
   );
   allLabels.forEach(label => (label.style.color = 'hsl(0, 100%, 67%)'));
 }
+
+let str1 = 'Must be a Valid Date';
+let str2 = 'Must be a Valid Month';
+let str3 = 'Must be in the past';
+
+const errorMessage = (i, text) =>{
+  allErrorSpan[i].classList.remove('hidden');
+  allErrorSpan[i].textContent = text;
+  error();
+  reset();
+}
+
 let yearDifference;
 let monthDifference;
 let dayDifference;
@@ -47,29 +59,20 @@ const isValidDate = (day, month, year) => {
     day = parseInt(day);
     month = parseInt(month);
     year = parseInt(year);
-
-    console.log(day, month, year);
-  
-    // Check if input values are valid numbers
-    if (isNaN(day) || isNaN(month) || isNaN(year)) {
-      console.log('Enter a Valid Number');
-    }
   
     // Check if month is within the valid range (1 to 12)
-    if (month < 1 || month > 12) {
-      allErrorSpan[1].classList.remove('hidden');
-      allErrorSpan[1].textContent = 'Must be a Valid Month';
-      error();
-      reset();
-    }
+    // if (month < 1 || month > 12) {
+    //   errorMessage(1, str2);
+    // }
 
     // Checking if year is within range
     if (year > endDate.getUTCFullYear()) {
-        console.log('YEAR IS GREATER');
-        allErrorSpan[2].classList.remove('hidden');
-        allErrorSpan[2].textContent = 'Must be in the past';
-        error();
-        reset();
+      errorMessage(2, str3)
+    }
+
+    // If the dateInput is greater than the current date, 
+    if (day > endDate.getUTCDate() && month >= endDate.getUTCMonth()) {
+      errorMessage(0, str3)
     }
   
     // Determine the maximum number of days for the given month
@@ -137,12 +140,6 @@ const calcAge = function () {
 
     // Validating Inputs 
     isValidDate(dayInput.value, monthInput.value, yearInput.value);
-
-    // setInterval(() => {
-    //   if (dayInput.value !== '' && monthInput.value !== '' & yearInput.value !== '') {
-    //     dayInput.value = monthInput.value = yearInput.value = '';   
-    //   }
-    // }, 5000)
 
 };
 
