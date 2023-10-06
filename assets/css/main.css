@@ -55,7 +55,6 @@ html {
 }
 @media (max-width: 61.999em) {
   .main__contents--top--btn {
-    border: 1px solid red;
     width: 6rem;
     height: 6rem;
   }
