@@ -7,7 +7,7 @@
     padding: 1rem;
     position: absolute;
     right: 3rem;
-    top: 8.5rem;
+    top: 10rem;
     transition: all .2s;
 
     @include mq(tab-port){
@@ -24,6 +24,10 @@
         right: 50%;
         top: 9.5rem;
         transform: translate(50%, 50%);
+    }
+
+    @include mq(475px){
+        top: 10.5rem;
     }
 
     &:hover{

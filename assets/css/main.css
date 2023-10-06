@@ -50,7 +50,7 @@ html {
   padding: 1rem;
   position: absolute;
   right: 3rem;
-  top: 8.5rem;
+  top: 10rem;
   transition: all 0.2s;
 }
 @media (max-width: 61.999em) {
@@ -68,6 +68,11 @@ html {
     right: 50%;
     top: 9.5rem;
     transform: translate(50%, 50%);
+  }
+}
+@media (max-width: 29.679em) {
+  .main__contents--top--btn {
+    top: 10.5rem;
   }
 }
 .main__contents--top--btn:hover {
