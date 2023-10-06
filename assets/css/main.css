@@ -2,6 +2,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: hsl(0, 0%, 94%);
+  position: relative;
 }
 
 *,
@@ -77,7 +78,7 @@ main {
   background-color: hsl(0, 0%, 100%);
   position: absolute;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(50%, 21%);
   width: 50%;
   margin: auto;
   border-top-left-radius: 0.5rem;
@@ -85,6 +86,11 @@ main {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 17rem;
   padding: 2.5rem 0 2.5rem 2.5rem;
+}
+@media (max-width: 47.999em) {
+  main {
+    border: 1px solid red;
+  }
 }
 main .main__content .main__contents--top {
   border-bottom: 1px solid hsl(0, 0%, 86%);

@@ -4,13 +4,17 @@ main {
   background-color: $white;
   position: absolute;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(50%, 21%);
   @include m-auto;
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
   border-bottom-right-radius: 17rem;
     padding: 2.5rem 0 2.5rem 2.5rem;
+
+    @include mq(land-phone){
+      // transform: translate(0);
+    }
 
   .main__content {
     .main__contents--top {

@@ -27,6 +27,12 @@ $breakpoints: (
 @mixin m-auto {
   width: 50%;
   margin: auto;
+
+  @include mq(land-phone){
+    border: 1px solid red;
+    // width: 40%;
+    // margin: 0;
+  }
 }
 
 @mixin flex-comp {
