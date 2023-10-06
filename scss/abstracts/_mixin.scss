@@ -28,7 +28,7 @@ $breakpoints: (
   width: 50%;
   margin: auto;
 
-  @include mq(land-phone){
+  @include mq(land-phone) {
     // width: 40%;
     // margin: 0;
   }
