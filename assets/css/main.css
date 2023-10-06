@@ -65,7 +65,7 @@ html {
 }
 @media (max-width: 47.999em) {
   .main__contents--top--btn {
-    right: 50%;
+    right: 46.5%;
     top: 13.5rem;
   }
 }
@@ -115,7 +115,7 @@ main .main__content .main__contents--top {
   }
 }
 main .main__content .main__contents--top .main__content--dates {
-  flex-basis: 33.3%;
+  flex-basis: 29.3%;
   position: relative;
   display: flex;
   flex-direction: column;
