@@ -63,6 +63,12 @@ html {
     width: 100%;
   }
 }
+@media (max-width: 47.999em) {
+  .main__contents--top--btn {
+    right: 50%;
+    top: 9.5rem;
+  }
+}
 .main__contents--top--btn:hover {
   background-color: hsl(0, 0%, 8%);
 }

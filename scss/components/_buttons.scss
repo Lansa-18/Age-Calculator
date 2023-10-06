@@ -20,6 +20,11 @@
         }
     }
 
+    @include mq(land-phone){
+        right: 50%;
+        top: 9.5rem;
+    }
+
     &:hover{
         background-color: $off-black;
     }
