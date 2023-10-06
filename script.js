@@ -136,7 +136,12 @@ const calcAge = function () {
     // Validating Inputs 
     isValidDate(dayInput.value, monthInput.value, yearInput.value);
 
-  //   dayInput.value = monthInput.value = yearInput.value = '';
+    setInterval(() => {
+      if (dayInput.value !== '' && monthInput.value !== '' & yearInput.value !== '') {
+        dayInput.value = monthInput.value = yearInput.value = '';   
+      }
+    }, 5000)
+
 };
 
 
