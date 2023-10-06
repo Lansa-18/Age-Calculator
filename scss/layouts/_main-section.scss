@@ -2,10 +2,11 @@
 
 main {
   background-color: $white;
+  border: 1px solid blue;
   position: absolute;
   top: 50%;
-  transform: translate(50%, 21%);
-  @include m-auto;
+  transform: translate(50%, -50%);
+  width: 50%;
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
@@ -13,7 +14,10 @@ main {
     padding: 2.5rem 0 2.5rem 2.5rem;
 
     @include mq(land-phone){
-      // transform: translate(0);
+      border: 1px solid red;
+      width: 90%;
+      transform: translate(6%, -50%);
+      // width: 90%;
     }
 
   .main__content {

@@ -2,7 +2,6 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: hsl(0, 0%, 94%);
-  position: relative;
 }
 
 *,
@@ -76,11 +75,11 @@ html {
 
 main {
   background-color: hsl(0, 0%, 100%);
+  border: 1px solid blue;
   position: absolute;
   top: 50%;
-  transform: translate(50%, 21%);
+  transform: translate(50%, -50%);
   width: 50%;
-  margin: auto;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -90,6 +89,8 @@ main {
 @media (max-width: 47.999em) {
   main {
     border: 1px solid red;
+    width: 90%;
+    transform: translate(6%, -50%);
   }
 }
 main .main__content .main__contents--top {
