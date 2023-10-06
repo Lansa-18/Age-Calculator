@@ -97,10 +97,8 @@ main {
     border: 1px solid red;
     width: 90%;
     transform: translate(6%, -50%);
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
   }
-}
-main .main__content {
-  border: 1px solid blue;
 }
 main .main__content .main__contents--top {
   border-bottom: 1px solid hsl(0, 0%, 86%);
@@ -113,9 +111,11 @@ main .main__content .main__contents--top {
 @media (max-width: 47.999em) {
   main .main__content .main__contents--top {
     padding: 0 0 4rem 0;
+    width: 100%;
   }
 }
 main .main__content .main__contents--top .main__content--dates {
+  flex-basis: 33.3%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -132,7 +132,7 @@ main .main__content .main__contents--top .main__content--dates input {
   border: 1px solid hsl(0, 0%, 86%);
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
-  width: 80%;
+  width: 100%;
   font-weight: 900;
   font-size: 1.5rem;
   cursor: pointer;
