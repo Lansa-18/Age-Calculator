@@ -66,7 +66,7 @@ html {
 @media (max-width: 47.999em) {
   .main__contents--top--btn {
     right: 50%;
-    top: 9.5rem;
+    top: 13.5rem;
   }
 }
 .main__contents--top--btn:hover {
@@ -99,6 +99,9 @@ main {
     transform: translate(6%, -50%);
   }
 }
+main .main__content {
+  border: 1px solid blue;
+}
 main .main__content .main__contents--top {
   border-bottom: 1px solid hsl(0, 0%, 86%);
   width: 82%;
@@ -106,6 +109,11 @@ main .main__content .main__contents--top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 47.999em) {
+  main .main__content .main__contents--top {
+    padding: 0 0 4rem 0;
+  }
 }
 main .main__content .main__contents--top .main__content--dates {
   position: relative;
