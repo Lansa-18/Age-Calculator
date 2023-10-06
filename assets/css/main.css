@@ -53,6 +53,17 @@ html {
   top: 8.5rem;
   transition: all 0.2s;
 }
+@media (max-width: 61.999em) {
+  .main__contents--top--btn {
+    border: 1px solid red;
+    width: 6rem;
+    height: 6rem;
+  }
+  .main__contents--top--btn img {
+    padding: 0;
+    width: 100%;
+  }
+}
 .main__contents--top--btn:hover {
   background-color: hsl(0, 0%, 8%);
 }

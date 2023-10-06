@@ -10,6 +10,17 @@
     top: 8.5rem;
     transition: all .2s;
 
+    @include mq(tab-port){
+        border: 1px solid red;
+        width: 6rem;
+        height: 6rem;
+
+        img{
+            padding: 0;
+            width: 100%;
+        }
+    }
+
     &:hover{
         background-color: $off-black;
     }
