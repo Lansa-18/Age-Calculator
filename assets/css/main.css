@@ -65,8 +65,9 @@ html {
 }
 @media (max-width: 47.999em) {
   .main__contents--top--btn {
-    right: 46.5%;
-    top: 13.5rem;
+    right: 50%;
+    top: 9.5rem;
+    transform: translate(50%, 50%);
   }
 }
 .main__contents--top--btn:hover {
@@ -81,7 +82,6 @@ html {
 
 main {
   background-color: hsl(0, 0%, 100%);
-  border: 1px solid blue;
   position: absolute;
   top: 50%;
   transform: translate(50%, -50%);
@@ -94,7 +94,6 @@ main {
 }
 @media (max-width: 47.999em) {
   main {
-    border: 1px solid red;
     width: 90%;
     transform: translate(6%, -50%);
     padding: 2.5rem 2.5rem 2.5rem 2.5rem;

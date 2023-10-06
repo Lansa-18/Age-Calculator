@@ -21,8 +21,9 @@
     }
 
     @include mq(land-phone){
-        right: 46.5%;
-        top: 13.5rem;
+        right: 50%;
+        top: 9.5rem;
+        transform: translate(50%, 50%);
     }
 
     &:hover{
