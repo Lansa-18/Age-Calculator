@@ -48,6 +48,13 @@ const errorMessage = (i, text) => {
   reset();
 };
 
+const emptyInputErrorMessage = (i) => {
+  error();
+  reset();
+  allErrorSpan[i].classList.remove('hidden');
+  allErrorSpan[i].textContent = 'Cannot be empty';
+}
+
 let yearDifference;
 let monthDifference;
 let dayDifference;
@@ -135,6 +142,17 @@ const calcAge = function () {
 
   // Validating Inputs
   isValidDate(dayInput.value, monthInput.value, yearInput.value);
+
+  if (dayInput.value === '') {
+    console.log('day is empty');
+    emptyInputErrorMessage(0);
+  } else if (monthInput.value === ''){
+    console.log('month is empty');
+    emptyInputErrorMessage(1);
+  } else if ( yearInput.value === ''){
+    console.log('year is empty');
+    emptyInputErrorMessage(2);
+  }
 };
 
 // Implementing the submit functionality when input is empty.
