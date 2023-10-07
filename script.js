@@ -76,9 +76,11 @@ const isValidDate = (day, month, year) => {
   }
 
   // If the dateInput is greater than the current date,
-  if (day > endDate.getUTCDate() && month >= endDate.getUTCMonth()) {
+  if (day > endDate.getUTCDate() && month >= endDate.getUTCMonth() && year >= endDate.getUTCFullYear()) {
     errorMessage(0, str3);
-  } 
+  } else if (day < endDate.getUTCDate() && month <= endDate.getUTCMonth() && year < endDate.getUTCFullYear()){
+    calcAge();
+  }
 
   // Determine the maximum number of days for the given month
   let maxDays;
