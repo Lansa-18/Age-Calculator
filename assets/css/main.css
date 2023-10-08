@@ -82,6 +82,10 @@ html {
 .attribution {
   text-align: center;
 }
+.attribution h1 {
+  font-weight: 650;
+  font-size: 1rem;
+}
 @media (max-width: 29.679em) {
   .attribution {
     width: 80%;
